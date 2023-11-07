@@ -21,6 +21,7 @@ const AddServicePage = () => {
     const price = form.price.value;
 
     const description = form.description.value;
+    const serviceProviderAbout = form.serviceProviderAbout.value;
 
     const serviceImageURL = form.serviceImageURL.value;
     const serviceArea = form.serviceArea.value;
@@ -36,6 +37,7 @@ const AddServicePage = () => {
       serviceImageURL,
       serviceArea,
       email,
+      serviceProviderAbout,
     };
     console.log(newProducts);
 
@@ -141,6 +143,15 @@ const AddServicePage = () => {
               <textarea
                 className="w-full px-4 py-3 border rounded-lg"
                 name="description"
+              />
+            </div>
+            <div className="mb-6">
+              <label className="block text-gray-600">
+                About Service Provider:
+              </label>
+              <textarea
+                className="w-full px-4 py-3 border rounded-lg"
+                name="serviceProviderAbout"
               />
             </div>
             <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-4 rounded-lg w-full">
