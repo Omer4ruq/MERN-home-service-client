@@ -7,6 +7,8 @@ import AddServicePage from "../pages/AddServicePage";
 import ManageServicePage from "../pages/ManageServicePage";
 import Home from "../pages/Home";
 import SingleServices from "../pages/SingleServices";
+import MySchedulePage from "../pages/MySchedulePage";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <Services></Services>,
+        element: (
+          <PrivateRoutes>
+            <Services></Services>
+          </PrivateRoutes>
+        ),
         loader: () => fetch("http://localhost:5000/services"),
       },
       {
@@ -36,13 +42,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/manage-service",
-        element: <ManageServicePage></ManageServicePage>,
+        element: (
+          <PrivateRoutes>
+            <ManageServicePage></ManageServicePage>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/single-service/:id",
         element: <SingleServices></SingleServices>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/my-schedules",
+        element: <MySchedulePage></MySchedulePage>,
       },
     ],
   },

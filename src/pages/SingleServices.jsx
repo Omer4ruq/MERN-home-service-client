@@ -1,9 +1,18 @@
+"use client";
 import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
+
 import { AuthContext } from "../providers/AuthProvider";
 
 const SingleServices = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  function onCloseModal() {
+    setOpenModal(false);
+    setEmail("");
+  }
   const { user } = useContext(AuthContext);
   const service = useLoaderData();
   const [date, setDate] = useState("");
@@ -57,9 +66,9 @@ const SingleServices = () => {
     // };
     const data = {
       serviceName: service.serviceType,
-      serviceImage: service.image,
+      serviceImage: service.serviceImageURL,
       serviceProviderEmail: service.email,
-      userEmail: user.email,
+      user: user.email,
       date,
       instruction,
     };
@@ -90,7 +99,7 @@ const SingleServices = () => {
   return (
     <div>
       <div>
-        <div className="hero min-h-screen bg-yellow-300">
+        {/* <div className="hero min-h-screen bg-yellow-300">
           <div className="hero-content flex-col lg:flex-row">
             <img
               className=" w-xl md:max-w-2xl rounded-lg shadow-2xl"
@@ -108,144 +117,7 @@ const SingleServices = () => {
                   Add Cart
                 </button>
                 {isDropdownOpen && (
-                  // <section className="w-[700px] h-[500px] fixed inset-0 flex items-center justify-center z-50  bg-gray-800 text-gray-50 mt-8 ml-72">
-                  //   <form
-                  //     onSubmit={handleBookedProduct}
-                  //     action=""
-                  //     className=" flex flex-col mx-auto space-y-12 backdrop-blur-sm"
-                  //   >
-                  //     <div className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-gray-900">
-                  //       {/* <div className="space-y-2 col-span-full lg:col-span-1">
-                  //         <p className="font-medium">Personal Inormation</p>
-                  //         <p className="text-xs">
-                  //           Lorem ipsum dolor sit, amet consectetur adipisicing
-                  //           elit. Adipisci fuga autem eum!
-                  //         </p>
-                  //       </div> */}
-                  //       <div className=" mt-2">
-                  //         <div className="flex gap-3">
-                  //           <div className="col-span-full sm:col-span-3">
-                  //             <label className="text-sm">Service Name</label>
-                  //             <input
-                  //               type="text"
-                  //               value={serviceType}
-                  //               readOnly
-                  //               className="w-28 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //             />
-                  //           </div>
-                  //           <div className="col-span-full sm:col-span-3">
-                  //             <label className="text-sm">Price</label>
-                  //             <input
-                  //               type="text"
-                  //               value={price}
-                  //               readOnly
-                  //               className="w-28 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //             />
-                  //           </div>
-                  //           <div className="col-span-full sm:col-span-3">
-                  //             <label className="text-sm">Service Imagee</label>
-                  //             <input
-                  //               type="text"
-                  //               value={photoURL}
-                  //               className="w-40 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //             />
-                  //           </div>
-                  //           <div className="col-span-full sm:col-span-3">
-                  //             <label className="text-sm">
-                  //               Service Provider email
-                  //             </label>
-                  //             <input
-                  //               id="email"
-                  //               type="email"
-                  //               value={email}
-                  //               className="w-40 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //             />
-                  //           </div>
-                  //         </div>
-
-                  //         <div className="col-span-full sm:col-span-3">
-                  //           <label className="text-sm">User Email</label>
-                  //           <input
-                  //             id="username"
-                  //             type="text"
-                  //             value={user.email}
-                  //             className="w-40 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //           />
-                  //         </div>
-                  //         <div className="my-4">
-                  //           <label htmlFor="date">Service Taking Date:</label>
-                  //           <input
-                  //             type="date"
-                  //             id="date"
-                  //             className="w-[500px] text-black bg-gray-100 border rounded-lg py-2 px-3"
-                  //             value={date}
-                  //             name="date"
-                  //             onChange={(e) => setDate(e.target.value)}
-                  //           />
-                  //         </div>
-                  //         <div className="flex">
-                  //           <div className="col-span-full">
-                  //             <label className="text-sm">Address</label>
-                  //             <input
-                  //               id="address"
-                  //               type="text"
-                  //               placeholder=""
-                  //               name="address"
-                  //               className="w-40 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //             />
-                  //           </div>
-                  //           <div className="col-span-full sm:col-span-2">
-                  //             <label className="text-sm">City</label>
-                  //             <input
-                  //               id="city"
-                  //               type="text"
-                  //               placeholder=""
-                  //               name="city"
-                  //               className="w-40 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //             />
-                  //           </div>
-                  //           <div className="col-span-full sm:col-span-2">
-                  //             <label className="text-sm">
-                  //               State / Province
-                  //             </label>
-                  //             <input
-                  //               id="state"
-                  //               type="text"
-                  //               placeholder=""
-                  //               name="state"
-                  //               className="w-40 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //             />
-                  //           </div>
-                  //           <div className="col-span-full sm:col-span-2">
-                  //             <label className="text-sm">ZIP / Postal</label>
-                  //             <input
-                  //               id="zip"
-                  //               type="text"
-                  //               placeholder=""
-                  //               name="zip"
-                  //               className="w-40 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //             />
-                  //           </div>
-                  //         </div>
-
-                  //         <div className="col-span-full sm:col-span-3">
-                  //           <label className="text-sm">Any Instruction</label>
-                  //           <input
-                  //             id="username"
-                  //             type="text"
-                  //             name="instruction"
-                  //             placeholder="Write here"
-                  //             className="w-40 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900"
-                  //           />
-                  //         </div>
-                  //       </div>
-                  //     </div>
-
-                  //     <button className="px-8 py-3 font-semibold rounded bg-cyan-700 text-white">
-                  //       Purchase
-                  //     </button>
-                  //   </form>
-                  // </section>
+                  
                   <section>
                     <form onSubmit={handleBookedProduct}>
                       <div>
@@ -287,6 +159,100 @@ const SingleServices = () => {
                   </section>
                 )}
               </div>
+            </div>
+          </div>
+        </div> */}
+      </div>
+      <div>
+        <div className="flex flex-col justify-between lg:flex-row gap-16 lg:items-center">
+          <div className="flex flex-col gap-6 lg:w-2/4">
+            <img
+              src={serviceImageURL}
+              alt=""
+              className="w-full h-full aspect-square object-cover rounded-xl"
+            />
+            {/* <div className='flex flex-row justify-between h-24'>
+                    <img src={images.img1} alt="" className='w-24 h-24 rounded-md cursor-pointer' onClick={() => setActiveImage(images.img1)}/>
+                    <img src={images.img2} alt="" className='w-24 h-24 rounded-md cursor-pointer' onClick={() => setActiveImage(images.img2)}/>
+                    <img src={images.img3} alt="" className='w-24 h-24 rounded-md cursor-pointer' onClick={() => setActiveImage(images.img3)}/>
+                    <img src={images.img4} alt="" className='w-24 h-24 rounded-md cursor-pointer' onClick={() => setActiveImage(images.img4)}/>
+                </div> */}
+          </div>
+          {/* ABOUT */}
+          <div className="flex flex-col gap-4 lg:w-2/4">
+            <div>
+              <h1 className="text-3xl font-bold">{serviceType}</h1>
+              <span className=" text-violet-600 font-semibold">
+                {serviceArea}
+              </span>
+            </div>
+            <p className="text-gray-700">{description}</p>
+            <h6 className="text-2xl font-semibold">$ {price}</h6>
+            <div className="flex flex-row items-center gap-12">
+              <div className="flex flex-row items-center">
+                <button className="bg-gray-200 py-2 px-5 rounded-lg text-violet-800 text-3xl">
+                  -
+                </button>
+                <span className="py-4 px-6 rounded-lg">amount</span>
+                <button className="bg-gray-200 py-2 px-4 rounded-lg text-violet-800 text-3xl">
+                  +
+                </button>
+              </div>
+              <button className="bg-violet-800 text-white font-semibold py-3 px-16 rounded-xl h-full">
+                Add to Cart
+              </button>
+              <Button onClick={() => setOpenModal(true)}>Toggle modal</Button>
+              <Modal show={openModal} size="md" onClose={onCloseModal} popup>
+                <Modal.Header />
+                <Modal.Body>
+                  <div className="space-y-6">
+                    <h3 className="text-xl font-medium text-gray-900 dark:text-white">
+                      Sign in to our platform
+                    </h3>
+                    <div>
+                      <div className="mb-2 block">
+                        <Label htmlFor="email" value="Your email" />
+                      </div>
+                      <TextInput
+                        id="email"
+                        placeholder="name@company.com"
+                        value={email}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <div className="mb-2 block">
+                        <Label htmlFor="password" value="Your password" />
+                      </div>
+                      <TextInput id="password" type="password" required />
+                    </div>
+                    <div className="flex justify-between">
+                      <div className="flex items-center gap-2">
+                        <Checkbox id="remember" />
+                        <Label htmlFor="remember">Remember me</Label>
+                      </div>
+                      <a
+                        href="#"
+                        className="text-sm text-cyan-700 hover:underline dark:text-cyan-500"
+                      >
+                        Lost Password?
+                      </a>
+                    </div>
+                    <div className="w-full">
+                      <Button>Log in to your account</Button>
+                    </div>
+                    <div className="flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300">
+                      Not registered?&nbsp;
+                      <a
+                        href="#"
+                        className="text-cyan-700 hover:underline dark:text-cyan-500"
+                      >
+                        Create account
+                      </a>
+                    </div>
+                  </div>
+                </Modal.Body>
+              </Modal>
             </div>
           </div>
         </div>

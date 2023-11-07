@@ -229,6 +229,11 @@ const Header = () => {
                           Add Services
                         </p>
                       </NavLink>
+                      <NavLink to="/my-schedules">
+                        <p className="cursor-pointer text-sm text-red-500">
+                          My Schedual
+                        </p>
+                      </NavLink>
 
                       <p
                         className="cursor-pointer text-sm text-red-500"
