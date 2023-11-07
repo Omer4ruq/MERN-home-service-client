@@ -49,7 +49,7 @@ const BookedServices = ({ booking }) => {
         </h5>
         <p className="font-normal text-gray-700 dark:text-gray-400">{date}</p>
         <p>{serviceProviderEmail}</p>
-        <FaTrash></FaTrash>
+        <FaTrash onClick={() => handleDelete(_id)}></FaTrash>
       </Card>
     </div>
   );
