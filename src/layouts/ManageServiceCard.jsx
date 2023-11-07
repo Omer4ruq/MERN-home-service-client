@@ -1,7 +1,9 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const ManageServiceCard = ({ addedService }) => {
   const {
+    _id,
     serviceType,
     name,
     price,
@@ -13,10 +15,34 @@ const ManageServiceCard = ({ addedService }) => {
     email,
     serviceProviderAbout,
   } = addedService;
+  const handleDelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/services/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      }
+    });
+  };
   return (
     <div>
       <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 bg-gray-900 text-gray-100">
-        <h2 className="text-xl font-semibold">My Pending works</h2>
         <ul className="flex flex-col divide-y divide-gray-700">
           <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
             <div className="flex w-full space-x-2 sm:space-x-4">
@@ -38,6 +64,7 @@ const ManageServiceCard = ({ addedService }) => {
                 </div>
                 <div className="flex text-sm divide-x">
                   <button
+                    onClick={() => handleDelete(_id)}
                     type="button"
                     className="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100"
                   >
