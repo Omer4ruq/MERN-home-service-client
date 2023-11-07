@@ -1,7 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
+
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     colors: {
       transparent: "transparent",
@@ -36,3 +41,11 @@ export default {
   },
   plugins: [require("flowbite/plugin")],
 };
+
+// module.exports = withMT({
+//   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+//   theme: {
+//     extend: {},
+//   },
+//   plugins: [],
+// });

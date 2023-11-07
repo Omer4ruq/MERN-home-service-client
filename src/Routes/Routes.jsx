@@ -39,8 +39,10 @@ const router = createBrowserRouter([
         element: <ManageServicePage></ManageServicePage>,
       },
       {
-        path: "/single-service",
+        path: "/single-service/:id",
         element: <SingleServices></SingleServices>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
     ],
   },

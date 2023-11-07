@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
   const {
+    _id,
     serviceType,
     name,
     price,
@@ -118,13 +119,15 @@ const ServiceCard = ({ service }) => {
               <div></div>
             </p>
           </div>
+        </div>
+        <NavLink to={`/single-service/${_id}`}>
           <button
             type="button"
             className="px-8 py-3 font-semibold rounded bg-cyan-700 text-white"
           >
             View Details
           </button>
-        </div>
+        </NavLink>
       </div>
     </div>
   );
