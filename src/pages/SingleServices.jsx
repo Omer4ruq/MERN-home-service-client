@@ -1,10 +1,11 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
 
 import { AuthContext } from "../providers/AuthProvider";
+import OtherService from "../layouts/otherService";
 
 const SingleServices = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -95,6 +96,7 @@ const SingleServices = () => {
 
     setDropdownOpen(!isDropdownOpen);
   };
+
   return (
     <div>
       <div>
@@ -305,16 +307,17 @@ const SingleServices = () => {
           </div>
         </div>
         <div className="">
-          <div className="flex w-72 mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
+          <div className="flex w-72 h-96 mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
             <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-violet-400 text-gray-900">
               <div className="space-y-2">
-                <h4 className="text-4xl font-bold">{name}</h4>
+                <h4 className="text-2xl font-bold">{name}</h4>
                 {/* <span className="text-6xl font-bold">
                   {serviceArea}
                   <span className="text-sm tracki">/month</span>
                 </span> */}
               </div>
-              <p className="leadi">{serviceProviderAbout}</p>
+              {/* <p className="leadi">{serviceProviderAbout}</p> */}
+              <img src={photoURL} alt="" />
               <ul className="flex-1 space-y-2">
                 <li className="flex items-center space-x-2">
                   <svg
@@ -380,6 +383,9 @@ const SingleServices = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <h1 className="text-2xl">Other services from this service provider</h1>
       </div>
     </div>
   );

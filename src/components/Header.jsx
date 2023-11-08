@@ -2,10 +2,16 @@ import { useContext, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import ServiceCard from "../pages/ServiceCard";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [services, setServices] = useState([ServiceCard]); // Replace with your list of services
+  const filteredServices = services.filter((service) =>
+    service.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -26,6 +32,8 @@ const Header = () => {
             type="text"
             placeholder="Search..."
             className="bg-transparent border-none w-24 sm:w-64"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <FaSearch className="text-slate-600"></FaSearch>
         </form>

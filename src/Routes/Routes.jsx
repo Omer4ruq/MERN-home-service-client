@@ -30,16 +30,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: (
-          <PrivateRoutes>
-            <Services></Services>
-          </PrivateRoutes>
-        ),
+        element: <Services></Services>,
         loader: () => fetch("http://localhost:5000/services"),
       },
       {
         path: "/add-service",
-        element: <AddServicePage></AddServicePage>,
+        element: (
+          <PrivateRoutes>
+            <AddServicePage></AddServicePage>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/manage-service",
@@ -52,17 +52,29 @@ const router = createBrowserRouter([
       },
       {
         path: "/single-service/:id",
-        element: <SingleServices></SingleServices>,
+        element: (
+          <PrivateRoutes>
+            <SingleServices></SingleServices>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
         path: "/my-schedules",
-        element: <MySchedulePage></MySchedulePage>,
+        element: (
+          <PrivateRoutes>
+            <MySchedulePage></MySchedulePage>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/update-service/:id",
-        element: <UpdateService></UpdateService>,
+        element: (
+          <PrivateRoutes>
+            <UpdateService></UpdateService>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
       },
