@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ManageServiceCard = ({ addedService }) => {
@@ -72,12 +73,17 @@ const ManageServiceCard = ({ addedService }) => {
                   </button>
 
                   <div className="relative ml-2">
-                    <button
-                      type="button"
-                      className="px-8 py-3 font-semibold border rounded border-gray-100 text-gray-100"
+                    <NavLink
+                      to={`/updateproducts/${_id}`}
+                      addedService={addedService}
                     >
-                      Update
-                    </button>
+                      <button
+                        type="button"
+                        className="px-8 py-3 font-semibold border rounded border-gray-100 text-gray-100"
+                      >
+                        Update
+                      </button>
+                    </NavLink>
                   </div>
                 </div>
               </div>

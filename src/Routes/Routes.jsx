@@ -61,8 +61,10 @@ const router = createBrowserRouter([
         element: <MySchedulePage></MySchedulePage>,
       },
       {
-        path: "/update-service",
+        path: "/update-service/:id",
         element: <UpdateService></UpdateService>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
     ],
   },
