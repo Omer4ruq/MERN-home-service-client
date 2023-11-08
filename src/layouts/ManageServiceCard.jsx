@@ -74,7 +74,7 @@ const ManageServiceCard = ({ addedService }) => {
 
                   <div className="relative ml-2">
                     <NavLink
-                      to={`/updateproducts/${_id}`}
+                      to={`/update-service/${_id}`}
                       addedService={addedService}
                     >
                       <button

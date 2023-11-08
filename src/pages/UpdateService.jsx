@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 const UpdateService = () => {
   const service = useLoaderData();
   const {
+    _id,
     serviceType,
     name,
     price,
@@ -16,7 +17,7 @@ const UpdateService = () => {
     email,
     serviceProviderAbout,
   } = service;
-  const handleAddProduct = (event) => {
+  const handleUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
     const serviceType = form.serviceType.value;
@@ -69,7 +70,7 @@ const UpdateService = () => {
   return (
     <div>
       <div className="container mx-auto mt-10">
-        <form onSubmit={handleAddProduct}>
+        <form onSubmit={handleUpdate}>
           <div className="bg-white shadow-md rounded-lg p-6">
             <h2 className="text-3xl font-semibold mb-6">Add a Service</h2>
 
