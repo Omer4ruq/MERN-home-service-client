@@ -27,7 +27,7 @@ const BookedServices = ({ booking }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/booked/${_id}`, {
+        fetch(`https://home-service-server-six.vercel.app/booked/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

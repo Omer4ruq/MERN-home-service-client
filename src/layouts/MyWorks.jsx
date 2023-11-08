@@ -5,7 +5,7 @@ import WorksCard from "./WorksCard";
 const MyWorks = () => {
   const { user } = useContext(AuthContext);
   const [workings, setWorkings] = useState([]);
-  const url = `http://localhost:5000/booked?serviceProviderEmail=${user?.email}`;
+  const url = `https://home-service-server-six.vercel.app/booked?serviceProviderEmail=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

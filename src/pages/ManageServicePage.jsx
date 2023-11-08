@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import ManageServiceCard from "../layouts/ManageServiceCard";
+import { Helmet } from "react-helmet";
 
 const ManageServicePage = () => {
   const { user } = useContext(AuthContext);
   const [addedServices, setAddedService] = useState([]);
-  const url = `http://localhost:5000/services?email=${user?.email}`;
+  const url = `https://home-service-server-six.vercel.app/services?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -13,7 +14,10 @@ const ManageServicePage = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-xl font-semibold">My Pending works</h2>
+      <Helmet>
+        <title>Manage Service</title>
+      </Helmet>
+      <h2 className="text-xl font-semibold">Manage Services</h2>
       <div>
         {addedServices.map((addedService) => (
           <ManageServiceCard

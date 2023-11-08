@@ -73,31 +73,13 @@ const ServiceCard = ({ service }) => {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <div>
-          <div>
-            <img
-              src={serviceImageURL}
-              className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-              alt=""
-            />
-          </div>
-
-          <div>
-            <div className="flex items-center space-x-2">
-              <img
-                src={photoURL}
-                alt=""
-                className="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700"
-              />
-              <div className="-space-y-1">
-                <h2 className="text-sm font-semibold leadi">{name}</h2>
-                <span className="inline-block text-xs leadi dark:text-gray-400">
-                  Service Area: {serviceArea}
-                </span>
-              </div>
-            </div>
-          </div>
+      <div className="flex flex-col w-[650px] h-[200px] items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-4xl  dark:border-gray-700 dark:bg-gray-800 hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
+        <div className="w-[400px]">
+          <img
+            src={serviceImageURL}
+            className="rounded-t-lg  md:h-[200px] w-[250px]  md:rounded-none md:rounded-l-lg"
+            alt=""
+          />
         </div>
 
         <div className="flex flex-col justify-between p-4 leading-normal">
@@ -116,18 +98,36 @@ const ServiceCard = ({ service }) => {
                   )}
                 </p>
               </div>
-              <div></div>
+              <div className="ml-20 mt-8">
+                <NavLink to={`/single-service/${_id}`}>
+                  <button
+                    type="button"
+                    className="px-4 py-2 font-semibold rounded bg-cyan-700 text-white"
+                  >
+                    View Details
+                  </button>
+                </NavLink>
+              </div>
             </p>
           </div>
         </div>
-        <NavLink to={`/single-service/${_id}`}>
-          <button
-            type="button"
-            className="px-8 py-3 font-semibold rounded bg-cyan-700 text-white"
-          >
-            View Details
-          </button>
-        </NavLink>
+        <div>
+          <div>
+            <div className="flex items-center space-x-4">
+              <img
+                src={photoURL}
+                alt=""
+                className="ml-4 w-16 h-16 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700"
+              />
+            </div>
+          </div>
+          <div className="-space-y-1">
+            <h2 className="text-sm font-semibold leadi">{name}</h2>
+            <span className="inline-block text-xs leadi dark:text-gray-400">
+              Service Area: {serviceArea}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

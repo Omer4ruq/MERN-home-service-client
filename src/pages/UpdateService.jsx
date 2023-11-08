@@ -46,7 +46,7 @@ const UpdateService = () => {
     };
     console.log(newProducts);
 
-    fetch(`http://localhost:5000/services/${_id}`, {
+    fetch(`https://home-service-server-six.vercel.app/services/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -72,7 +72,7 @@ const UpdateService = () => {
       <div className="container mx-auto mt-10">
         <form onSubmit={handleUpdate}>
           <div className="bg-white shadow-md rounded-lg p-6">
-            <h2 className="text-3xl font-semibold mb-6">Add a Service</h2>
+            <h2 className="text-3xl font-semibold mb-6">Update Service</h2>
 
             <div className="mb-6">
               <label className="block text-gray-600">Service Type:</label>

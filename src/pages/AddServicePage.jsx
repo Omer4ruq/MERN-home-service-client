@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const AddServicePage = () => {
   const { user } = useContext(AuthContext);
@@ -41,7 +42,7 @@ const AddServicePage = () => {
     };
     console.log(newProducts);
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://home-service-server-six.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -64,6 +65,9 @@ const AddServicePage = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Adde Service Page</title>
+      </Helmet>
       <div className="container mx-auto mt-10">
         <form onSubmit={handleAddProduct}>
           <div className="bg-white shadow-md rounded-lg p-6">

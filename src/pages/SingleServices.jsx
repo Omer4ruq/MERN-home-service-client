@@ -1,6 +1,7 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
 
@@ -74,7 +75,7 @@ const SingleServices = () => {
     };
     console.log(data);
 
-    fetch("http://localhost:5000/booked", {
+    fetch("https://home-service-server-six.vercel.app/booked", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -99,6 +100,9 @@ const SingleServices = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Signup Page</title>
+      </Helmet>
       <div>
         {/* <div className="hero min-h-screen bg-yellow-300">
           <div className="hero-content flex-col lg:flex-row">
