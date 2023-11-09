@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../components/Banner";
 import { Helmet } from "react-helmet";
 import Catagory from "../layouts/Catagory";
+import PopulerServices from "../layouts/PopulerServices";
 
 const Home = () => {
   return (
@@ -14,6 +15,9 @@ const Home = () => {
       </div>
       <div>
         <Catagory></Catagory>
+      </div>
+      <div>
+        <PopulerServices></PopulerServices>
       </div>
     </div>
   );

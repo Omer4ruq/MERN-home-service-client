@@ -19,6 +19,7 @@ const SingleServices = () => {
   const [date, setDate] = useState("");
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [instruction, setInstruction] = useState("");
+  const [status, setStatus] = useState("");
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -70,9 +71,10 @@ const SingleServices = () => {
       serviceImage: service.serviceImageURL,
       serviceProviderEmail: service.email,
       email: user.email,
-      price: service.price,
+      price: user.email,
       date,
       instruction,
+      status,
     };
     console.log(data);
 
@@ -267,6 +269,20 @@ const SingleServices = () => {
                         </div>
                         <div>
                           <div className=" block">
+                            <Label
+                              htmlFor="password"
+                              value="Service Provider Name"
+                            />
+                          </div>
+                          <TextInput
+                            type="text"
+                            value={service.name}
+                            readOnly
+                            className="text-black"
+                          />
+                        </div>
+                        <div>
+                          <div className=" block">
                             <Label htmlFor="password" value="Your Email" />
                           </div>
                           <TextInput
@@ -294,6 +310,17 @@ const SingleServices = () => {
                             value={instruction}
                             onChange={(e) => setInstruction(e.target.value)}
                             className="text-black"
+                          />
+                        </div>
+                        <div className="hidden">
+                          <div className=" block">
+                            <Label htmlFor="password" value="Service Status" />
+                          </div>
+                          <TextInput
+                            value="Painding"
+                            onChange={(e) => setStatus(e.target.value)}
+                            className="text-black"
+                            readOnly
                           />
                         </div>
 
