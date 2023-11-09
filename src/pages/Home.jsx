@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "../components/Banner";
 import { Helmet } from "react-helmet";
+import Catagory from "../layouts/Catagory";
 
 const Home = () => {
   return (
@@ -8,7 +9,12 @@ const Home = () => {
       <Helmet>
         <title>Home Page</title>
       </Helmet>
-      <Banner></Banner>
+      <div>
+        <Banner></Banner>
+      </div>
+      <div>
+        <Catagory></Catagory>
+      </div>
     </div>
   );
 };

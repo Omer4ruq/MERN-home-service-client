@@ -30,6 +30,7 @@ const Header = () => {
           <span className="text-slate-500 first-line:">Next</span>
           <span className="text-slate-700"> Dore</span>
         </h1>
+
         <form className="bg-slate-100 p-3 rounded-lg flex items-center">
           <input
             type="text"

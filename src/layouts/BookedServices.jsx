@@ -12,8 +12,9 @@ const BookedServices = ({ booking }) => {
     serviceName,
     serviceImage,
     serviceProviderEmail,
-    userEmail,
+    email,
     date,
+    price,
   } = booking;
   const handleDelete = (_id) => {
     console.log(_id);
@@ -27,7 +28,7 @@ const BookedServices = ({ booking }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://home-service-server-six.vercel.app/booked/${_id}`, {
+        fetch(`http://localhost:5000/booked/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -43,14 +44,35 @@ const BookedServices = ({ booking }) => {
 
   return (
     <div>
-      <Card className="max-w-sm" imgSrc={serviceImage}>
+      <div className="grid grid-cols-3">
+        {/* <Card className="max-w-sm" imgSrc={serviceImage}>
         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {serviceName}
         </h5>
         <p className="font-normal text-gray-700 dark:text-gray-400">{date}</p>
         <p>{serviceProviderEmail}</p>
         <FaTrash onClick={() => handleDelete(_id)}></FaTrash>
-      </Card>
+      </Card> */}
+        <Card className="w-56" imgSrc={serviceImage}>
+          <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {serviceName}
+          </h5>
+          <p className="font-medium text-sm  text-gray-700 dark:text-gray-400">
+            {/* Here are you will find the best car washer in you Area. Who are the
+          very much professiolas. And Authorized by our field mambers. */}
+            <div
+              className="flex gap-2 ml-4 justify-between
+          "
+            >
+              <div className="-mt-1">price: $ {price}</div>
+              <FaTrash
+                onClick={() => handleDelete(_id)}
+                className="text-2xl"
+              ></FaTrash>
+            </div>
+          </p>
+        </Card>
+      </div>
     </div>
   );
 };

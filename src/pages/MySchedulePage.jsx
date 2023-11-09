@@ -8,9 +8,9 @@ import MyWorks from "../layouts/MyWorks";
 const MySchedulePage = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  const url = `https://home-service-server-six.vercel.app/booked?userEmail?=${user.email}`;
+  const url = `http://localhost:5000/booked?email=${user?.email}`;
   useEffect(() => {
-    fetch(url, { credentials: "include" })
+    fetch(url)
       .then((res) => res.json())
       .then((data) => setBookings(data));
   }, []);
@@ -21,7 +21,8 @@ const MySchedulePage = () => {
       </Helmet>
       <div className="grid grid-cols-2 justify-between">
         <div>
-          <div className="grid grid-cols-2 p-3 gap-3 max-w-lg mx-auto">
+          <h2 className="text-xl font-semibold">My Cart</h2>
+          <div className="grid grid-cols-2 p-2 gap-3 max-w-lg mx-auto">
             {bookings.map((booking) => (
               <BookedServices
                 key={bookings._id}

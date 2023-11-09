@@ -34,33 +34,42 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+  // useEffect(() => {
+  //   const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+  //     const userEmail = currentUser?.email || user?.email;
+  //     const loggedUser = { email: userEmail };
+  //     setUser(currentUser);
+  //     setLoading(false);
+  //     if (currentUser) {
+  //       axios
+  //         .post("http://localhost:5000/jwt", loggedUser, {
+  //           withCredentials: true,
+  //         })
+  //         .then((res) => {
+  //           console.log("token response", res.data);
+  //         });
+  //     } else {
+  //       axios
+  //         .post(
+  //           "http://localhost:5000/logout",
+  //           loggedUser,
+  //           {
+  //             withCredentials: true,
+  //           }
+  //         )
+  //         .then((res) => {
+  //           console.log("token response", res.data);
+  //         });
+  //     }
+  //   });
+  //   return () => {
+  //     unSubscribe();
+  //   };
+  // }, []);
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      const userEmail = currentUser?.email || user?.email;
-      const loggedUser = { email: userEmail };
       setUser(currentUser);
       setLoading(false);
-      if (currentUser) {
-        axios
-          .post("https://home-service-server-six.vercel.app/jwt", loggedUser, {
-            withCredentials: true,
-          })
-          .then((res) => {
-            console.log("token response", res.data);
-          });
-      } else {
-        axios
-          .post(
-            "https://home-service-server-six.vercel.app/logout",
-            loggedUser,
-            {
-              withCredentials: true,
-            }
-          )
-          .then((res) => {
-            console.log("token response", res.data);
-          });
-      }
     });
     return () => {
       unSubscribe();

@@ -69,13 +69,14 @@ const SingleServices = () => {
       serviceName: service.serviceType,
       serviceImage: service.serviceImageURL,
       serviceProviderEmail: service.email,
-      user: user.email,
+      email: user.email,
+      price: service.price,
       date,
       instruction,
     };
     console.log(data);
 
-    fetch("https://home-service-server-six.vercel.app/booked", {
+    fetch("http://localhost:5000/booked", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 const ManageServicePage = () => {
   const { user } = useContext(AuthContext);
   const [addedServices, setAddedService] = useState([]);
-  const url = `https://home-service-server-six.vercel.app/services?email=${user?.email}`;
+  const url = `http://localhost:5000/manage-services?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

@@ -10,7 +10,7 @@ const ManageServiceCard = ({ addedService }) => {
     price,
     photoURL,
     description,
-
+    serviceProviderEmail,
     serviceImageURL,
     serviceArea,
     email,
@@ -28,7 +28,7 @@ const ManageServiceCard = ({ addedService }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://home-service-server-six.vercel.app/services/${_id}`, {
+        fetch(`http://localhost:5000/services/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -59,8 +59,13 @@ const ManageServiceCard = ({ addedService }) => {
                       {serviceType}
                     </h3>
                   </div>
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-semibold leadi sm:pr-8">
+                      {serviceType}
+                    </h3>
+                  </div>
                   <div className="text-right">
-                    <p className="text-lg font-semibold">{price}</p>
+                    <p className="text-lg font-semibold">{email}</p>
                   </div>
                 </div>
                 <div className="flex text-sm divide-x">

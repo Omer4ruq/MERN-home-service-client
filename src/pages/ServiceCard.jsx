@@ -102,7 +102,7 @@ const ServiceCard = ({ service }) => {
                 <NavLink to={`/single-service/${_id}`}>
                   <button
                     type="button"
-                    className="px-4 py-2 font-semibold rounded bg-cyan-700 text-white"
+                    className="px-4 py-2 font-semibold rounded bg-cyan-700 text-white "
                   >
                     View Details
                   </button>
