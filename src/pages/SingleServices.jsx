@@ -71,6 +71,7 @@ const SingleServices = () => {
       serviceImage: service.serviceImageURL,
       serviceProviderEmail: service.email,
       serviceProviderName: service.name,
+      serviceProviderImage: service.photoURL,
       email: user.email,
       price: service.price,
       date,
@@ -264,6 +265,20 @@ const SingleServices = () => {
                           <TextInput
                             type="text"
                             value={service.email}
+                            readOnly
+                            className="text-black"
+                          />
+                        </div>
+                        <div>
+                          <div className=" block">
+                            <Label
+                              htmlFor="password"
+                              value="Service Provider Photo"
+                            />
+                          </div>
+                          <TextInput
+                            type="text"
+                            value={photoURL}
                             readOnly
                             className="text-black"
                           />

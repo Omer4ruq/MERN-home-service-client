@@ -8,15 +8,18 @@ const PopulerServiceCard = ({ populer }) => {
     serviceName,
     serviceImage,
     serviceProviderEmail,
+    serviceProviderName,
+
+    serviceProviderImage,
     email,
     date,
     price,
   } = populer;
   return (
     <div>
-      <Card className="w-56" imgSrc={serviceImage}>
+      <Card className="w-56" imgSrc={serviceProviderImage}>
         <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {serviceName}
+          {serviceProviderName}
         </h5>
         <p className="font-medium text-sm  text-gray-700 dark:text-gray-400">
           {/* Here are you will find the best car washer in you Area. Who are the

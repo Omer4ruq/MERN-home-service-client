@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "flowbite-react";
-import { FaTag } from "react-icons/fa";
+
 import PopulerServiceCard from "./PopulerServiceCard";
 
 const PopulerServices = () => {
@@ -13,12 +12,17 @@ const PopulerServices = () => {
   }, []);
   return (
     <div>
-      {populers.map((populer) => (
-        <PopulerServiceCard
-          key={populer._Id}
-          populer={populer}
-        ></PopulerServiceCard>
-      ))}
+      <h1 className="text-start font-bold text-2xl m-6 -ml-1">
+        Popular service providers in your area
+      </h1>
+      <div className="grid grid-cols-4">
+        {populers.map((populer) => (
+          <PopulerServiceCard
+            key={populer._Id}
+            populer={populer}
+          ></PopulerServiceCard>
+        ))}
+      </div>
     </div>
   );
 };

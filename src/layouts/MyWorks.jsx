@@ -5,7 +5,7 @@ import WorksCard from "./WorksCard";
 const MyWorks = () => {
   const { user } = useContext(AuthContext);
   const [workings, setWorkings] = useState([]);
-  const url = `http://localhost:5000/booked_bprovider?serviceProviderEmail=${user?.email}`;
+  const url = `http://localhost:5000/booked_provider?serviceProviderEmail=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

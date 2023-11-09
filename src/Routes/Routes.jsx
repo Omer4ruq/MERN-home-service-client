@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/plumb",
-        element: <Plumbing></Plumbing>>,
+        element: <Plumbing></Plumbing>,
       },
       {
         path: "/login",
@@ -68,7 +68,6 @@ const router = createBrowserRouter([
       {
         path: "/services-by-catagory",
         element: <ServicesByCatagory></ServicesByCatagory>,
-       
       },
       {
         path: "/add-service",
