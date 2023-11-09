@@ -1,0 +1,50 @@
+[
+  {
+    "brandId": "adidas123",
+    "serviceType": "Car Wash Service",
+    "brandImage": "https://i.ibb.co/THJ89v6/Steam-Car-Washing-300x200.jpg",
+    "upcoming": "https://i.ibb.co/qx7qnft/Adidas-Superstar-Sneakers.jpg"
+  },
+  {
+    "brandId": "nike456",
+    "serviceType": "Plumbing Service",
+    "brandImage": "https://i.ibb.co/WgMfk4d/plumber-fixing-white-sink-pipe-with-adjustable-wrench-picture-id1150199946-768x512.jpg",
+    "upcoming": "https://i.ibb.co/0BSNt74/jordan-5-retro-university-blue-DV1310-401.jpg"
+  },
+  {
+    "brandId": "Puma789",
+    "serviceType": "Electrical Service",
+    "brandImage": "https://i.ibb.co/zVYfk3h/commercial-electrician-1.jpg",
+    "upcoming": "https://i.ibb.co/wgJPRQj/81zx-Cvmnqx-L-AC-UY1100.jpg"
+  },
+  {
+    "brandId": "levis101",
+    "serviceType": "Painting Service",
+    "brandImage": "https://imageupload.io/ib/uOKSWrsFgLO1knK_1699522969.jpg",
+    "upcoming": "https://i.ibb.co/7WGhkPz/mens-bomber-jackets-1585913140-5356802.jpg"
+  },
+  {
+    "brandId": "Zara202",
+    "serviceType": "Moving",
+    "brandImage": "https://i.ibb.co/b7dtSn7/durham-moving-companyasas.jpg",
+    "upcoming": "https://i.ibb.co/QYRvZVB/4087480055-6-1-1.jpg"
+  },
+  {
+    "brandId": "hm303",
+    "serviceType": "Furniture Assmble Service",
+    "brandImage": "https://i.ibb.co/x17zD6z/Adobe-Stock-182833843-1-1.jpg",
+    "upcoming": "https://i.ibb.co/5YLMz51/hmgoepprod.jpg"
+  },
+  {
+    "brandId": "hm303",
+    "serviceType": "Cleaning Service",
+    "brandImage": "https://i.ibb.co/BGMCYDy/Cleaning-supplies.jpg",
+    "upcoming": "https://i.ibb.co/5YLMz51/hmgoepprod.jpg"
+  },
+  {
+    "brandId": "hm303",
+    "serviceType": "Gurdening Service",
+    "brandImage": "https://imageupload.io/ib/s0A5tgodTHVxCFO_1699523184.jpg",
+    "upcoming": "https://i.ibb.co/5YLMz51/hmgoepprod.jpg"
+  }
+]

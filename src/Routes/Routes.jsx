@@ -17,15 +17,19 @@ import Paint from "../pages/servicesCatagory/Paint";
 import Electrical from "../pages/servicesCatagory/Electrical";
 import Cleaning from "../pages/servicesCatagory/cleaning";
 import Plumbing from "../pages/servicesCatagory/plumbing";
+import Mambership from "../pages/Mambership";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("/db.json"),
       },
       {
         path: "/carwash",
@@ -63,7 +67,8 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () =>
+          fetch("https://home-service-server-six.vercel.app/services"),
       },
       {
         path: "/services-by-catagory",
@@ -86,6 +91,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/mambership",
+        element: (
+          <PrivateRoutes>
+            <Mambership></Mambership>
+          </PrivateRoutes>
+        ),
+      },
+      {
         path: "/single-service/:id",
         element: (
           <PrivateRoutes>
@@ -93,7 +106,9 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://home-service-server-six.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/my-schedules",
@@ -111,7 +126,18 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://home-service-server-six.vercel.app/service/${params.id}`
+          ),
+      },
+
+      {
+        path: "/service-by-type/:serviceType",
+        element: <ServicesByCatagory></ServicesByCatagory>,
+        loader: ({ params }) =>
+          fetch(
+            `https://home-service-server-six.vercel.app/service_by_type/${params.serviceType}`
+          ),
       },
     ],
   },

@@ -6,6 +6,7 @@ import { FaSearch } from "react-icons/fa";
 
 const Services = () => {
   const services = useLoaderData();
+  console.log(services);
   const [dataLength, setDataLength] = useState(2);
   const [search, setSearch] = useState("");
   return (
@@ -30,7 +31,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 p-3 max-w-lg mx-auto gap-4 ml-48">
           {services
-            .filter((service) => {
+            ?.filter((service) => {
               return search.toLowerCase() === ""
                 ? service
                 : service.serviceType.toLowerCase().includes(search);
@@ -39,6 +40,9 @@ const Services = () => {
             .map((service) => (
               <ServiceCard key={service._id} service={service}></ServiceCard>
             ))}
+          {/* {services.ma((service) => (
+            <ServiceCard key={service._id} service={service}></ServiceCard>
+          ))} */}
         </div>
         <button
           onClick={() => setDataLength(services.length)}

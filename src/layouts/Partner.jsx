@@ -15,7 +15,7 @@ const Partner = () => {
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
               <a
                 rel="noopener noreferrer"
-                href="#"
+                href="/mambership"
                 className="px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900"
               >
                 Join as mamber
