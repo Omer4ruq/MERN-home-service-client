@@ -215,7 +215,7 @@ const SingleServices = () => {
                   onClick={() => setOpenModal(true)}
                   className="inline-block w-full px-5 py-3 font-bold tracki text-center rounded bg-gray-800 text-violet-400"
                 >
-                  Get Started
+                  Book Now
                 </a>
 
                 <Modal show={openModal} size="md" onClose={onCloseModal} popup>

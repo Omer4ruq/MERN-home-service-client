@@ -42,7 +42,7 @@ const AddServicePage = () => {
     };
     console.log(newProducts);
 
-    fetch("https://home-service-server-six.vercel.app/booked", {
+    fetch("https://home-service-server-six.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -1,8 +1,17 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a local service finder website based on.. here are some key feature in this website
 
-Currently, two official plugins are available:
+- User-Friendly Navigation: A clean and intuitive navigation menu to help users easily explore different sections of the website, such as Home, Add products, MyCart, Contact and brand SignIn.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- service all will show al the availber service
+
+- Detailed service Pages: Comprehensive product pages with images, Discription, Name and add cart option.
+
+- add service: a user can add any service.
+
+- Login and Registration system. there are some private protected that can not be visited without login.
+
+here is the Live link of the project given below:
+
+- [My Website Here](https://home-service-92300.web.app/)

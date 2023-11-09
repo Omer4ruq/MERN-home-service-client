@@ -16,10 +16,7 @@ const Catagory = ({ catagories }) => {
       </div>
       <div className="grid grid-cols-4 gap-3">
         {catagories.map((catagory) => (
-          <CatagoryCard
-            key={catagory.brandId}
-            catagory={catagory}
-          ></CatagoryCard>
+          <CatagoryCard key={catagory.id} catagory={catagory}></CatagoryCard>
         ))}
       </div>
     </div>

@@ -4,7 +4,7 @@ import PopulerServiceCard from "./PopulerServiceCard";
 
 const PopulerServices = () => {
   const [populers, setPopulers] = useState([]);
-  const url = `http://localhost:5000/booked`;
+  const url = `https://home-service-server-six.vercel.app/booked`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

@@ -9,7 +9,7 @@ const CatagoryCard = ({ catagory }) => {
   const { serviceType, brandImage } = catagory;
   return (
     <div>
-      <NavLink to={`/service-by-type/${serviceType}`}>
+      <NavLink to={`/services`}>
         <Card className="w-72" imgSrc={brandImage}>
           <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             {serviceType}
