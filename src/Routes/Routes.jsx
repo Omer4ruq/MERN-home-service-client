@@ -10,6 +10,13 @@ import SingleServices from "../pages/SingleServices";
 import MySchedulePage from "../pages/MySchedulePage";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateService from "../pages/UpdateService";
+import ServicesByCatagory from "../pages/ServicesByCatagory";
+import CarWash from "../pages/servicesCatagory/CarWash";
+import Moving from "../pages/servicesCatagory/Moving";
+import Paint from "../pages/servicesCatagory/Paint";
+import Electrical from "../pages/servicesCatagory/Electrical";
+import Cleaning from "../pages/servicesCatagory/cleaning";
+import Plumbing from "../pages/servicesCatagory/plumbing";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +26,31 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/carwash",
+        element: <CarWash></CarWash>,
+      },
+      {
+        path: "/moving",
+        element: <Moving></Moving>,
+      },
+      {
+        path: "/paint",
+        element: <Paint></Paint>,
+      },
+      {
+        path: "/electrical",
+        element: <Electrical></Electrical>,
+      },
+
+      {
+        path: "/cleaning",
+        element: <Cleaning></Cleaning>,
+      },
+      {
+        path: "/plumb",
+        element: <Plumbing></Plumbing>>,
       },
       {
         path: "/login",
@@ -32,6 +64,11 @@ const router = createBrowserRouter([
         path: "/services",
         element: <Services></Services>,
         loader: () => fetch("http://localhost:5000/services"),
+      },
+      {
+        path: "/services-by-catagory",
+        element: <ServicesByCatagory></ServicesByCatagory>,
+       
       },
       {
         path: "/add-service",
