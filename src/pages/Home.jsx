@@ -3,6 +3,8 @@ import Banner from "../components/Banner";
 import { Helmet } from "react-helmet";
 import Catagory from "../layouts/Catagory";
 import PopulerServices from "../layouts/PopulerServices";
+import Partner from "../layouts/Partner";
+import Team from "../components/Team";
 
 const Home = () => {
   return (
@@ -18,6 +20,13 @@ const Home = () => {
       </div>
       <div>
         <PopulerServices></PopulerServices>
+      </div>
+
+      <div className="mt-3">
+        <Partner></Partner>
+      </div>
+      <div>
+        <Team></Team>
       </div>
     </div>
   );

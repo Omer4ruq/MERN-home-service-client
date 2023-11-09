@@ -17,21 +17,23 @@ const PopulerServiceCard = ({ populer }) => {
   } = populer;
   return (
     <div>
-      <Card className="w-56" imgSrc={serviceProviderImage}>
-        <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {serviceProviderName}
-        </h5>
-        <p className="font-medium text-sm  text-gray-700 dark:text-gray-400">
-          {/* Here are you will find the best car washer in you Area. Who are the
-          very much professiolas. And Authorized by our field mambers. */}
-          <div
-            className="flex gap-2 ml-4 justify-between
-          "
-          >
-            <div className="-mt-1">price: $ {populer.price}</div>
-          </div>
-        </p>
-      </Card>
+      <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
+        <img
+          src={serviceProviderImage}
+          alt=""
+          className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
+        />
+        <div className="mt-6 mb-2">
+          <span className="block text-xs font-medium tracki uppercase dark:text-violet-400">
+            {serviceProviderName}
+          </span>
+          <h2 className="text-xl font-semibold tracki">{serviceName}</h2>
+        </div>
+        {/* <p className="dark:text-gray-100">
+          Mauris et lorem at elit tristique dignissim et ullamcorper elit. In
+          sed feugiat mi. Etiam ut lacinia dui.
+        </p> */}
+      </div>
     </div>
   );
 };

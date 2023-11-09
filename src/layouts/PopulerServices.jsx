@@ -15,7 +15,7 @@ const PopulerServices = () => {
       <h1 className="text-start font-bold text-2xl m-6 -ml-1">
         Popular service providers in your area
       </h1>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-4 gap-6">
         {populers.map((populer) => (
           <PopulerServiceCard
             key={populer._Id}

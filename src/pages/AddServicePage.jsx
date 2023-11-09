@@ -81,7 +81,7 @@ const AddServicePage = () => {
               >
                 <option value="">Select Service Type</option>
                 <option value="Furniture Assembly">Furniture Assembly</option>
-                <option value="Home Repairs">Home Repairs</option>
+                <option value="Painting">Painting</option>
                 <option value="Home Cleaning">Home Cleaning</option>
                 <option value="Plumbing">Plumbing</option>
                 <option value="Electrical Help">Electrical Help</option>
